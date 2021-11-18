@@ -1,0 +1,80 @@
+/*Hussein Alsowadi
+updated 02-17-21
+*/
+body {
+				font-family: courier, 'Book Antigua', monospace;
+				background-color:#4C2D73;
+				
+			}
+
+
+			
+table {
+				border:4px solid green;
+				text-align:center;
+				width:100%;
+				border-color:#6A266F;
+				margin:100px;
+
+
+
+			}
+			th {
+				border:1px solid black;
+
+
+			}
+			td {
+				border:1px solid black;
+				text-align:center;
+				color:#AAA039;
+				
+			}
+			th.picHeader{
+				border:1px solid black;
+				width:33%;
+			}
+			td.mainHeader{
+				border:1px solid black;
+				width:66%;
+				font-size:500%;
+				color:#94A537;
+				
+			}
+			th.secondHeader{
+				border:1px solid black;
+				width:44%;
+				font-size:400%;
+				color:#94A537
+
+				
+			}
+			p.format
+			{
+				text-align:left;
+				font-size: 125%;
+				color:#AAA039;
+				
+
+			}
+			li.listFormat{
+				text-align:left;
+				font-size:125%;
+				color:#AAA039;
+				
+			}
+			h1.h1Format{
+				text-align:left;
+				font-size:250%;
+				color:#94A537;
+				
+
+			}
+			h2.h2Format {
+				text-align:left;
+				font-size:150%;
+				color:#AAA039;
+				
+			}
+			
+

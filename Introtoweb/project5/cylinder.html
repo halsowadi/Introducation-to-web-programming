@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Hussein Alsowadi, last updated:2/23/21 This is a program that calculates Area and Volume of a cylinder-->
+
+<head>
+	<meta charset ="utf-8">
+	 <title> Cylinder Calculator </title> 
+	 <style>
+	 	input:hover {
+	 		background-color:#6A266F;
+	 	}
+	 	input:onclick {
+	 		background-color:black;
+	 	}
+	 </style>
+	<script>
+	function cylinder() {
+	var radius = document.getElementById("radius").value;
+	var length = document.getElementById("length").value;
+	var area = document.getElementById("area");
+	area.value = Math.PI*radius*radius;
+	var volume = document.getElementById("volume");
+	volume.value = Math.PI*radius*radius*length;
+}
+	</script>
+</head>
+	<body style= "margin: 20px; background-color:#4C2D73; color:#AAA039; font-family: courier, 'Book Antigua', monospace;">
+        <h3>Cylinder Calculator</h3>
+		<h3>Program by: Hussein Alsowadi </h3>
+		<h4>This program will take the radius and length of a cylinder, given as real numbers, and will compute the area and volume of the cylinder, also displayed as real numbers. </h4>
+<label>Enter the radius of the cylinder: </label>
+<br>
+<input id="radius" type="number" onchange="cylinder()" >
+<br>
+<label>Enter the length of the cylinder:</label>
+<br>
+<input id="length" type="number" onchange="cylinder()" >
+<br>
+<label>Results:</label>
+<br>
+<label>The area is:</label>
+<br>
+<input id="area" type="number" >
+<br>
+<label>The volume is:</label>
+<br>
+<input id="volume" type="number" >
+<br>
+
+ 
+	</body>
+</html>

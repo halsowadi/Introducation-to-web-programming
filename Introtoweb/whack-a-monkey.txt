@@ -1,0 +1,29 @@
+Whack-a-Monkey source code
+_____________________________________________________________________________________
+var score=0;
+function playGame(){
+  setInterval(moveMonkey,750);
+  setTimeout(endGame,20*1000);
+}
+function moveMonkey(){
+  var x= randomNumber(0,3);
+  var y=randomNumber(0,3);
+setPosition("monkey", 60 +(x*60),60+(y*50));
+}
+function endGame(){
+  setScreen("Finalscore");
+  setText("Finalscore2",score);
+}
+onEvent("start", "click", function(event) {
+  score=0;
+  setScreen("game");
+  playGame();
+});
+onEvent("monkey","click",function(event){
+  score+=100;
+  setText("currentscore",score);
+});
+onEvent("image1","click",function(event){
+  score-=100;
+  setText("currentscore",score);
+});

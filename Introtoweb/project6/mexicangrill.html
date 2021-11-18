@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Hussein Alsowadi, last updated:2/23/21 This is a program that calculates total price of burritos, tacos, and chips-->
+
+<head>
+	<meta charset ="utf-8">
+	 <title> Mexican Grill </title> 
+	 <style>
+	 	input:hover {
+	 		background-color:yellow;
+	 	}
+	 	input:focus {
+	 		background-color:green;
+	 	}
+	 </style>
+	<script>
+
+	function total() {
+	var burritos = document.getElementById("burritos").value;
+	var tacos = document.getElementById("tacos").value;
+	var chips = document.getElementById("chips").value;
+	var total = document.getElementById("total");
+	total.value = tacos*1.50 + burritos*2.50+chips*1;
+	
+}
+
+	</script>
+</head>
+	<body style= "margin: 20px; background-color:#4C2D73; color:#AAA039; font-family: courier, 'Book Antigua', monospace;">
+        <h3>Mexican Resturant</h3>
+		<h3>Program by: Hussein Alsowadi </h3>
+		<h1>Mexican Grill  </h1>
+		 
+<label class="x">enter the quantity of burritos you would like for $2.50 each: </label>
+<br>
+<input id="burritos" type="number"  onclick="total()"   >
+<br>
+<label>enter the quantity of tacos you would like for $1.50 each:</label>
+<br>
+<input id="tacos" type="number" onclick="total()" >
+<br>
+<label>enter the quantity of chips you would like for $1.00 each::</label>
+<br>
+<input id="chips" type="number" onclick="total()" >
+<br>
+<button onclick="total()">Click Me</button>
+<br>
+<label>The total is:</label>
+<br>
+<input id="total" type="number" >
+<br>
+
+
+ 
+	</body>
+</html>

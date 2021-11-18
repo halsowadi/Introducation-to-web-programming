@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<!--Hussein Alsowadi, last updated:2/23/21 This is an animiation of a circle that does only half of what its supposed  to -->
+
+
+<head>
+	<meta charset ="utf-8">
+	<title>Bouncing Ball</title>
+	<style>
+  #container {
+    width: 400px;
+  	height: 400px;
+  	position: relative;
+  	background: yellow;
+}
+
+#ball {
+	align-self:center;
+  	width: 50px;
+  	height: 50px;
+  	position:absolute;
+  	border-radius: 60px;
+  	background-color: red;
+  	align-items:center;
+
+
+}
+
+
+</style>
+	</head>
+
+<body>
+<h1>Bouncing Circle Animation</h1>
+   <p>
+      <button onclick="myMove()">Click Me</button>
+   </p> 
+
+   <div id ="container">
+      <div id ="ball" ></div>
+   </div>
+
+<script>
+
+function myMove() {
+  var elem = document.getElementById("ball");
+  var xpos = 350;
+  var ypos = 0;
+  var id = setInterval(frame, 5);
+  function frame() {
+     if ( ypos<400 && xpos >200){
+     xpos--;
+    ypos++; 
+     
+       elem.style.top = ypos + 'px';
+      elem.style.left = xpos + 'px';
+     }
+     else if (ypos > 0&& xpos >0){
+      xpos--;
+    ypos--; 
+     elem.style.top = ypos + 'px';
+      elem.style.left = xpos + 'px';
+     
+     }
+     
+        
+        
+      
+
+  
+    
+
+  }
+}
+</script>
+
+</body>
+
+</html>

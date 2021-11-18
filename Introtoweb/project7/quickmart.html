@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+Description: Demo6.html (Skeleton for your project!) IF you wish to use it!
+Create a grocery app, keeping track of the items purchased. Be able to delete the first or last item.
+Include what else your project will do here.
+Author:  Hussein Alsowadi 3/9/21 (And Bahorski)
+-->
+<head> 
+ <meta charset="utf-8" /> 
+ <style>
+ 	div{
+
+ 		background-color:lightblue;
+ 		margin:500px;
+ 		padding:10px;
+ 	}
+
+ 	form{
+ 		border-color:orange;
+ 		border-width:5px;
+ 	}
+
+ 	h1{
+ 		text-align:center;
+ 	}
+
+ </style>
+
+ <title>QuickMart</title>
+
+  <script> 
+   var itemsArray = [];  // declares the array 
+   var costArray=[];
+   var quantityArray=[];
+   var total =0;
+    function insertItem(){   
+      itemsArray.push(document.getElementById('item').value);  // inserts at end   
+      costArray.push(document.getElementById('cost').value);
+      quantityArray.push(document.getElementById('quantity').value);
+       
+       document.getElementById("demo2").innerHTML = "The WHOLE array: "+itemsArray.toString();  // whole array    
+      displayReceipt();
+     
+        } 
+    function displayReceipt(){    
+        // Notice this "builds" a HUGE string, by embedding tags WITH an unordered list!
+      	text="";
+        text="==============================================";
+        text+="<br /><h2>Mini-Mart EMU Receipt: Hussein Alsowadi</h2>";
+        text+="<table>";
+        text+="<tr>" +"<td>" +"<b>Item:</b>" +"</td>" +"<td>" +"<b>Quantity: </b>" + "</td>" + "<td>" +"<b>Cost:</b>"+"</td>" +"</tr>";
+        text+="<ul>";
+              
+                	for (var i = 0; i < itemsArray.length; i++) {
+
+                		text += "<tr>" +"<td>"+ itemsArray[i] +"</td>"+"&nbsp &nbsp &nbsp &nbsp" +"<td>"+quantityArray[i]+ "</td>"+"&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp"+ "<td>"+ costArray[i]+"</li>" +"</td>" +"</tr>";
+                	}
+                	
+        text += "</ul>";
+         document.getElementById("demo2").innerHTML = text;
+        }
+
+        function printTotal(){
+        	var x=0;
+        	var one=0;
+        	var two =0;
+        	for (var i =0; i<itemsArray.length; i++){
+        		one=parseFloat(costArray[i]);
+        		two =parseFloat(quantityArray[i]);
+        		x += one+two;
+        	}
+        	
+        	text="";
+        	text+="your total is $" + parseFloat(x).toFixed(2);
+        	document.getElementById("demo1").innerHTML = text;
+        }
+
+    </script>
+
+</head>
+
+<body>
+	<div> 
+		<h1><b>...Mini-Mart EMU Online...</b></h1>
+		<p> Enter your item information.</p>
+		<p>Submit the item by clicking on "Add to Cart".</p>
+		<p>Click on the Checkout button when done entering items.</p>
+  
+  <form>   
+  	
+    <input id="item" type="text" size="40" placeholder="Item"><br><br> 
+    <input id="cost" type="text" size="40" placeholder="Cost"><br><br> 
+    <input id="quantity" type="text" size="40" placeholder="quantity"><br><br> 
+
+    <input type="reset" value="Add to Cart" onclick="insertItem()"/> 
+    <input type="reset" value="Go to Check Out" onclick="printTotal()"/>
+       
+     <!-- <input type="button" value="Print Receipt" onclick="displayReceipt()"> -->
+  </form> 
+         
+        <p id="demo2"></p>
+        <p id="demo1"></p>
+      
+    </div>
+</body>
+        </html>
